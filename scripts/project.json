@@ -1,0 +1,57 @@
+{
+  "root": "scripts",
+  "sourceRoot": "scripts/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/scripts",
+        "main": "scripts/src/main.ts",
+        "tsConfig": "scripts/tsconfig.app.json"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "scripts/src/environments/environment.ts",
+              "with": "scripts/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:execute",
+      "options": {
+        "buildTarget": "scripts:build",
+        "watch": false,
+        "inspect": false
+      },
+      "configurations": {
+        "seed": {
+          "args": ["seed"]
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["scripts/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/scripts"],
+      "options": {
+        "jestConfig": "scripts/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,56 @@
+{
+  "name": "bug",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "nx serve",
+    "dev": "nx serve",
+    "build": "nx build",
+    "test": "nx test",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "prisma": {
+    "seed": "echo \"TODO: add seed script to package.json\""
+  },
+  "private": true,
+  "dependencies": {
+    "nx": "13.8.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.13",
+    "@babel/preset-typescript": "7.12.13",
+    "@nrwl/cli": "13.8.2",
+    "@nrwl/cypress": "13.8.2",
+    "@nrwl/devkit": "13.8.2",
+    "@nrwl/eslint-plugin-nx": "13.8.2",
+    "@nrwl/jest": "13.8.2",
+    "@nrwl/js": "13.8.2",
+    "@nrwl/linter": "13.8.2",
+    "@nrwl/node": "13.8.2",
+    "@nrwl/nx-cloud": "13.1.4",
+    "@nrwl/tao": "13.8.2",
+    "@nrwl/workspace": "13.8.2",
+    "@storybook/addon-essentials": "~6.4.12",
+    "@storybook/builder-webpack5": "~6.4.12",
+    "@storybook/manager-webpack5": "~6.4.12",
+    "@storybook/react": "~6.4.12",
+    "@svgr/webpack": "^5.4.0",
+    "@types/jest": "27.0.2",
+    "@types/node": "16.11.7",
+    "@typescript-eslint/eslint-plugin": "~5.10.0",
+    "@typescript-eslint/parser": "~5.10.0",
+    "babel-jest": "27.2.3",
+    "babel-loader": "8.1.0",
+    "esbuild": "^0.14.25",
+    "esbuild-plugin-svg": "^0.1.0",
+    "esbuild-runner": "^2.2.1",
+    "eslint": "~8.7.0",
+    "eslint-config-next": "12.0.7",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-react": "7.27.0",
+    "eslint-plugin-react-hooks": "4.3.0"
+  }
+}

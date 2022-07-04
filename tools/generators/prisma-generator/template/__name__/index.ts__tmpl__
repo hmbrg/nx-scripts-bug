@@ -1,0 +1,21 @@
+import {PrismaClient } from '.prisma/<%= name %>-client';
+export * from '.prisma/<%= name %>-client'
+
+export const <%= className %>Client = PrismaClient;
+
+const  prismaGlobal = global as typeof global & {
+   <%= propertyName %>?: PrismaClient;
+};
+
+export const <%= propertyName %>: PrismaClient =
+  prismaGlobal.<%= propertyName %> ||
+  new PrismaClient({
+    log:
+      process.env.NODE_ENV === 'development'
+        ? ['query', 'error', 'warn']
+        : ['error'],
+  });
+
+if (process.env.NODE_ENV !== 'production') {
+  prismaGlobal.<%= propertyName %> = <%= propertyName %>;
+}
